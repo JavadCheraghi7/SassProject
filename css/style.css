@@ -1,0 +1,340 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+.home {
+  height: 100%;
+  padding-top: 40vh;
+  text-align: center;
+  background: url("../img/moon.jpg") center top;
+  background-size: cover;
+  align-items: center;
+  overflow: hidden; }
+  .home .homeName {
+    width: 700px;
+    font-size: 5rem;
+    padding-bottom: 1rem;
+    margin: 1rem auto 1rem auto;
+    border-bottom: 1px solid #fff; }
+    .home .homeName .homeLast {
+      color: #ec5454;
+      font-weight: 700; }
+
+.btnBurger {
+  position: absolute;
+  z-index: 1;
+  right: 1rem;
+  top: 1rem;
+  height: 20px;
+  width: 28px;
+  cursor: pointer;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out; }
+  .btnBurger__btn {
+    position: absolute;
+    right: 0;
+    top: 0.5rem;
+    width: 28px;
+    height: 3px;
+    background: #fff;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out; }
+    .btnBurger__btn::before {
+      content: "";
+      position: absolute;
+      width: 28px;
+      height: 3px;
+      background: #fff;
+      top: -8px; }
+    .btnBurger__btn::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 3px;
+      background: #fff;
+      top: 8px; }
+    .btnBurger__btn.open {
+      transform: rotate(270deg);
+      background: transparent; }
+      .btnBurger__btn.open::before {
+        transform: rotate(45deg) translate(5px, 6px); }
+      .btnBurger__btn.open::after {
+        width: 28px;
+        transform: rotate(-45deg) translate(5px, -6px); }
+
+.nav {
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  opacity: 0.98;
+  visibility: hidden; }
+  .nav.open {
+    visibility: visible; }
+  .nav .menu-nav {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    background: #30333c;
+    list-style: none;
+    padding-right: 1rem;
+    transform: translateY(-100%);
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out; }
+    .nav .menu-nav.open {
+      transform: translateY(0); }
+    .nav .menu-nav .nav-item {
+      transform: translateX(100vw);
+      transition-property: all;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-in-out; }
+      .nav .menu-nav .nav-item.open {
+        transform: translateX(0); }
+      .nav .menu-nav .nav-item.active > a {
+        color: #ec5454; }
+    .nav .menu-nav .nav-link {
+      display: inline-block;
+      font-size: 1.5rem;
+      padding: 2rem 0;
+      text-transform: uppercase;
+      font-weight: 400;
+      transition-property: all;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-in-out; }
+      .nav .menu-nav .nav-link:hover {
+        color: #ec5454; }
+
+.nav-item:nth-child(1) {
+  transition-delay: 0.6s; }
+
+.nav-item:nth-child(2) {
+  transition-delay: 0.7s; }
+
+.nav-item:nth-child(3) {
+  transition-delay: 0.8s; }
+
+.nav-item:nth-child(4) {
+  transition-delay: 0.9s; }
+
+.about {
+  padding-bottom: 2rem; }
+  .about .bio-image {
+    width: 100%;
+    height: 50vh;
+    background: url("../img/moon.jpg") center top;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; }
+    .about .bio-image p {
+      margin-bottom: 2rem; }
+  .about .about-bio {
+    width: 80%;
+    text-align: center; }
+    .about .about-bio .bio-text {
+      padding-bottom: 1rem; }
+  .about .jobs {
+    width: 60vw;
+    margin: 2rem auto 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem; }
+    .about .jobs .job {
+      background: #404040;
+      padding: 1rem;
+      border-bottom: 2px solid #ec5454;
+      border-radius: 10px; }
+      .about .jobs .job h3,
+      .about .jobs .job h6 {
+        margin: 0.5rem 0; }
+  .about .socialIcon {
+    display: flex;
+    flex-direction: column; }
+  .about footer {
+    transform: rotate(90deg);
+    right: -40px;
+    bottom: 76px; }
+
+.projects {
+  padding-bottom: 2rem; }
+  .projects .bio-image {
+    width: 100%;
+    height: 40vh;
+    background: url("../img/moon.jpg") center top;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; }
+    .projects .bio-image .bio-text {
+      font-size: 2rem;
+      margin-bottom: 2rem; }
+  .projects .projects-items {
+    width: 60vw;
+    margin: 2rem auto 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem; }
+  .projects .projects-item {
+    position: relative;
+    border-bottom: 3px solid #ec5454;
+    overflow: hidden;
+    cursor: pointer; }
+    .projects .projects-item img {
+      width: 100%; }
+    .projects .projects-item:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 100%;
+      left: 0;
+      background: #ec5454;
+      opacity: 0;
+      transition-property: all;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-in-out; }
+    .projects .projects-item:hover::after {
+      top: 0;
+      opacity: 0.8; }
+    .projects .projects-item:hover .projects-btn {
+      opacity: 1; }
+    .projects .projects-item .projects-btns {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      text-align: center; }
+    .projects .projects-item .projects-btn {
+      opacity: 0;
+      color: #333;
+      font-size: 1.2rem;
+      transition-property: all;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-in-out; }
+      .projects .projects-item .projects-btn:hover {
+        color: #fff; }
+  .projects .socialIcon {
+    display: flex;
+    flex-direction: column; }
+  .projects footer {
+    transform: rotate(90deg);
+    right: -40px;
+    bottom: 76px; }
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding-top: 40vh;
+  background: url("../img/moon.jpg") center top;
+  background-size: cover;
+  overflow: hidden; }
+  .contact h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #ec5454; }
+  .contact .contact-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem; }
+    .contact .contact-list .contact-text {
+      color: #ec5454; }
+  .contact .socialIcon {
+    position: initial;
+    margin-top: 2rem; }
+
+@media screen and (min-width: 768px) {
+  .btnBurger {
+    visibility: hidden; }
+  .nav {
+    visibility: visible; }
+    .nav .menu-nav {
+      display: block;
+      transform: translateX(0);
+      height: 100%;
+      background: transparent;
+      text-align: right; }
+      .nav .menu-nav .nav-item {
+        display: inline;
+        padding-right: 1.5rem; }
+      .nav .menu-nav .nav-link {
+        font-size: 1rem; }
+  .about-bio {
+    font-size: 1.5rem; }
+  .projects .bio-image {
+    height: 40vh;
+    background-position: center center; }
+  .projects .projects-items {
+    grid-template-columns: repeat(4, 1fr); } }
+
+@media screen and (min-width: 1024px) {
+  .projects .bio-image {
+    background-position: center center; }
+  .projects .projects-items {
+    grid-template-columns: repeat(4, 1fr); } }
+
+@media screen and (min-width: 1400px) {
+  .projects .bio-image {
+    height: 50vh;
+    background-position: center center; } }
+
+body {
+  height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1;
+  color: #fff;
+  background: #333; }
+
+h1,
+h2,
+h3 {
+  font-weight: 400; }
+
+.bio-text {
+  color: #ec5454; }
+
+a {
+  color: #fff;
+  text-decoration: none; }
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  padding: 1rem; }
+
+main {
+  width: 100%;
+  height: 100%; }
+  main .socialIcon {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem; }
+    main .socialIcon a {
+      padding: 0.4rem;
+      font-size: 1.5rem;
+      transition-property: all;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-in-out; }
+      main .socialIcon a:hover {
+        color: #fff; }
+
+footer {
+  position: fixed;
+  right: 1rem;
+  text-align: right;
+  bottom: 1rem; }

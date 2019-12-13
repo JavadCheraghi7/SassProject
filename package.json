@@ -1,0 +1,20 @@
+{
+  "name": "sassproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "all.min.js",
+  "scripts": {
+    "compile:sass": "node-sass scss/main.scss css/style.css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "auto": "^7.17.0",
+    "live-server": "^1.2.1",
+    "prefix": "^1.0.0",
+    "sass": "^1.23.7"
+  },
+  "devDependencies": {
+    "node-sass": "^4.13.0"
+  }
+}
